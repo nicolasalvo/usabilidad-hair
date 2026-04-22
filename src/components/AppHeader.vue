@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import LanguageSwitcher from './LanguageSwitcher.vue'
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
@@ -134,6 +135,9 @@ onUnmounted(() => {
       </nav>
       
       <div class="header-actions">
+        <div class="header-lang">
+          <LanguageSwitcher />
+        </div>
         <a href="#" class="btn btn-reservar header-cta">RESERVAR</a>
         <button class="hamburger" @click="toggleMobileMenu">
           <span></span>
@@ -316,8 +320,8 @@ onUnmounted(() => {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 24px;
-  height: 18px;
+  width: 28px;
+  height: 16px;
   background: none;
   border: none;
   cursor: pointer;
@@ -329,7 +333,11 @@ onUnmounted(() => {
   width: 100%;
   height: 2px;
   background-color: #000;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-lang {
+  display: block;
 }
 
 .mobile-menu-header {
@@ -337,14 +345,19 @@ onUnmounted(() => {
 }
 
 @media (max-width: 1150px) {
+  .header-actions {
+    gap: 12px;
+  }
+
   .hamburger {
     display: flex;
+    margin-left: 5px;
   }
   
   .nav {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -300px;
     width: 300px;
     height: 100vh;
     background-color: #ffffff;
@@ -352,38 +365,58 @@ onUnmounted(() => {
     flex-direction: column;
     padding: 30px;
     transition: right 0.4s cubic-bezier(0.5, 0, 0, 1);
-    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-    display: block; /* Ensure it shows as a block on mobile */
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    display: flex;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   
   .nav.mobile-open {
     right: 0;
+    top: 0;
   }
   
+  .nav ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 0;
+  }
+
   .nav-item {
     width: 100%;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
   }
   
   .nav-link {
     padding: 15px 0;
     font-size: 14px;
+    font-weight: 700;
     justify-content: space-between;
+    width: 100%;
+    color: #666;
   }
   
   .mobile-menu-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    height: 45px;
   }
   
   .close-btn {
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
-    color: #666;
+    color: #000;
+    padding: 5px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .dropdown {
@@ -396,11 +429,17 @@ onUnmounted(() => {
     min-width: auto;
     border-top: none;
     padding: 10px 0;
-    display: none; /* Initially hide dropdowns on mobile */
+    display: none;
+    text-align: left;
   }
   
   .nav-item:hover .dropdown {
     display: block;
+  }
+
+  .dropdown li a {
+    padding: 10px 25px;
+    font-size: 11px;
   }
   
   .header-cta {
@@ -415,9 +454,9 @@ onUnmounted(() => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.4);
   z-index: 1150;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
 }
 
 @media (max-width: 480px) {
@@ -428,9 +467,18 @@ onUnmounted(() => {
   .brand-name {
     font-size: 1rem;
   }
+
+  .logo-text {
+    display: none; /* Hide text on very small phones to leave space for language + burger */
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+  }
   
-  .header-cta {
-    display: none; /* Hide button on very small screens to avoid header clutter */
+  .header-actions .header-cta {
+    display: none !important;
   }
 }
 </style>
