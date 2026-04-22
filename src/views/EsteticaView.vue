@@ -1,30 +1,29 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import PageBanner from '../components/PageBanner.vue'
 import ServiceCard from '../components/ServiceCard.vue'
 
-const services = [
-  {
-    title: 'MANICURA Y PEDICURA',
-    description: 'Tratamientos completos para tus manos y pies. Esmaltado tradicional o permanente con las mejores marcas.',
-    image: '/img/estetica.png'
-  },
-  {
-    title: 'INDIBA DEEP BEAUTY',
-    description: 'Tecnología de radiofrecuencia para rejuvenecimiento facial y corporal. Resultados visibles desde la primera sesión.',
-    image: '/img/banner_estetica.png'
-  },
-  {
-    title: 'LIMPIEZA DE CUTIS',
-    description: 'Tratamientos faciales personalizados para hidratar, iluminar y oxigenar tu piel.',
-    image: '/img/hero3.png'
-  },
-  {
-    title: 'MICROBLADING',
-    description: 'Diseño de cejas pelo a pelo para una mirada perfecta y natural.',
-    image: '/img/banner_peluqueria.png'
-  }
-]
+const { t, tm, rt } = useI18n()
+
+const services = computed(() => {
+  const serviceMessages = tm('estetica.services')
+  return serviceMessages.map((service, index) => ({
+    title: rt(service.title),
+    description: rt(service.description),
+    image: getServiceImage(index)
+  }))
+})
+
+const getServiceImage = (index) => {
+  const images = [
+    '/img/estetica.png',
+    '/img/banner_estetica.png',
+    '/img/hero3.png',
+    '/img/banner_peluqueria.png'
+  ]
+  return images[index] || images[0]
+}
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -39,18 +38,17 @@ onMounted(() => {
 <template>
   <div class="page-view">
     <PageBanner 
-      title="ESTÉTICA" 
-      subtitle="UN CENTRO DE ESTÉTICA EN BARCELONA PENSADO PARA TI"
+      :title="t('estetica.title')" 
+      :subtitle="t('estetica.subtitle')"
       image="/img/banner_estetica.png"
     />
     
     <section class="content-section container">
       <div class="intro-text reveal">
-        <h2 class="section-tag">BELLEZA INTEGRAL</h2>
-        <h1 class="section-title">CUIDADO Y BIENESTAR</h1>
+        <h2 class="section-tag">{{ t('estetica.tag') }}</h2>
+        <h1 class="section-title">{{ t('estetica.mainTitle') }}</h1>
         <p class="section-desc">
-          En nuestro salón de estética en Barcelona encontrarás los tratamientos más innovadores 
-          de la mano de profesionales expertas en el cuidado de la piel y el cuerpo.
+          {{ t('estetica.desc') }}
         </p>
       </div>
       

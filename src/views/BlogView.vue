@@ -1,27 +1,22 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import PageBanner from '../components/PageBanner.vue'
 
-const posts = [
-  {
-    title: 'OLAPLEX BARCELONA: TODO LO QUE DEBES SABER',
-    excerpt: 'Descubre el tratamiento que ha revolucionado el cuidado del cabello dañado.',
-    image: '/img/banner_blog.png',
-    date: '15 JUN 2026'
-  },
-  {
-    title: 'PRÓTESIS CAPILARES: LA SOLUCIÓN DEFINITIVA',
-    excerpt: 'Hablamos sobre cómo recuperar la densidad capilar de forma natural.',
-    image: '/img/hero2.png',
-    date: '28 MAY 2026'
-  },
-  {
-    title: 'TENDENCIAS DE CORTE PARA ESTE VERANO',
-    excerpt: 'Desde el Bob clásico hasta los estilos más vanguardistas.',
-    image: '/img/banner_peluqueria.png',
-    date: '10 MAY 2026'
-  }
-]
+const { t, tm, rt } = useI18n()
+
+const posts = computed(() => {
+  const postMessages = tm('blog.posts')
+  const dates = ['15 JUN 2026', '28 MAY 2026', '10 MAY 2026']
+  const images = ['/img/banner_blog.png', '/img/hero2.png', '/img/banner_peluqueria.png']
+  
+  return postMessages.map((post, index) => ({
+    title: rt(post.title),
+    excerpt: rt(post.excerpt),
+    image: images[index] || images[0],
+    date: dates[index] || dates[0]
+  }))
+})
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -36,8 +31,8 @@ onMounted(() => {
 <template>
   <div class="page-view">
     <PageBanner 
-      title="BLOG" 
-      subtitle="TENDENCIAS, CONSEJOS Y ESTILO"
+      :title="t('blog.title')" 
+      :subtitle="t('blog.subtitle')"
       image="/img/banner_blog.png"
     />
     
@@ -49,7 +44,10 @@ onMounted(() => {
             <span class="post-date text-dim">{{ post.date }}</span>
             <h3 class="post-title">{{ post.title }}</h3>
             <p class="post-excerpt">{{ post.excerpt }}</p>
-            <a href="#" class="read-more">LEER MÁS <span class="arrow">→</span></a>
+            <a href="#" class="read-more">
+              {{ $t('common.leerMas') || $t('common.readMore') }} 
+              <span class="arrow">→</span>
+            </a>
           </div>
         </article>
       </div>

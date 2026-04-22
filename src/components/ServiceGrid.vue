@@ -1,26 +1,31 @@
 <script setup>
-const services = [
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+const services = computed(() => [
   {
-    title: 'PELUQUERÍA',
+    title: t('nav.peluqueria'),
     image: '/img/peluqueria.png',
-    link: '#'
+    link: '/peluqueria'
   },
   {
-    title: 'ESTÉTICA',
+    title: t('nav.estetica'),
     image: '/img/estetica.png',
-    link: '#'
+    link: '/estetica'
   },
   {
-    title: 'EXPERIENCIAS',
+    title: t('nav.experiencias'),
     image: '/img/experiencias.png',
-    link: '#'
+    link: '/experiencias'
   },
   {
-    title: 'EL SALÓN',
+    title: t('nav.salon'),
     image: '/img/salon.png',
     link: '#'
   }
-]
+])
 </script>
 
 <template>
@@ -38,7 +43,7 @@ const services = [
         <div class="service-content">
           <h3 class="service-title">{{ service.title }}</h3>
           <a :href="service.link" class="service-link">
-            VER MÁS 
+            {{ $t('common.verMas') || $t('common.viewMore') }} 
             <span class="arrow">→</span>
           </a>
         </div>

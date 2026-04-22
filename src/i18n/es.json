@@ -1,0 +1,183 @@
+{
+  "nav": {
+    "home": "INICIO",
+    "peluqueria": "PELUQUERÍA",
+    "estetica": "ESTÉTICA",
+    "experiencias": "EXPERIENCIAS",
+    "blog": "BLOG",
+    "salon": "SALÓN",
+    "contacto": "CONTACTO",
+    "peluqueria_items": {
+      "color": "COLOR",
+      "corte": "CORTE",
+      "peinados": "PEINADOS",
+      "tratamientos": "TRATAMIENTOS",
+      "mechas": "MECHAS",
+      "alisado": "ALISADO",
+      "extensiones": "EXTENSIONES",
+      "hombre": "HOMBRE",
+      "bodas": "BODAS"
+    },
+    "estetica_items": {
+      "limpieza_facial": "LIMPIEZA FACIAL",
+      "corporales": "TRATAMIENTOS CORPORALES",
+      "maquillaje": "MAQUILLAJE",
+      "manicura": "MANICURA",
+      "depilacion": "DEPILACIÓN"
+    },
+    "experiencias_items": {
+      "premium": "TRATAMIENTOS PREMIUM",
+      "bono": "BONO REGALO",
+      "asesoria": "ASESORÍA DE IMAGEN"
+    },
+    "salon_items": {
+      "eixample": "EIXAMPLE",
+      "les_corts": "LES CORTS",
+      "letamendi": "PLAZA LETAMENDI",
+      "gracia": "GRACIA"
+    }
+  },
+  "common": {
+    "reservar": "RESERVAR",
+    "descubreMas": "DESCUBRE MÁS",
+    "verMas": "VER MÁS",
+    "leerMas": "LEER MÁS",
+    "conocenos": "CONÓCENOS",
+    "pideCita": "PIDE CITA",
+    "bienvenido": "BIENVENIDO"
+  },
+  "home": {
+    "hero": [
+      { "title": "LA EXPERIENCIA DE TU VIDA", "subtitle": "PELUQUERÍA DE LUJO" },
+      { "title": "CREANDO BELLEZA", "subtitle": "ESTILO PROFESIONAL" },
+      { "title": "TU RADIANTE INTERIOR", "subtitle": "CUIDADO ESTÉTICO" }
+    ],
+    "intro": {
+      "tag": "BIENVENIDO",
+      "title": "EL LUJO DE SER UNO MISMO",
+      "desc": "En Haircut Day, creemos que la belleza es una extensión de tu personalidad. Un espacio diseñado para ofrecer algo más que un servicio: una experiencia sensorial que combina las últimas tendencias con el máximo cuidado y exclusividad."
+    }
+  },
+  "footer": {
+    "brandDesc": "Tu salón de confianza en Barcelona. Donde el estilo y la exclusividad se encuentran.",
+    "servicios": "SERVICIOS",
+    "informacion": "INFORMACIÓN",
+    "encuentranos": "ENCUÉNTRANOS",
+    "derechos": "Todos los derechos reservados."
+  },
+  "estetica": {
+    "title": "ESTÉTICA",
+    "subtitle": "UN CENTRO DE ESTÉTICA EN BARCELONA PENSADO PARA TI",
+    "tag": "BELLEZA INTEGRAL",
+    "mainTitle": "CUIDADO Y BIENESTAR",
+    "desc": "En nuestro salón de estética en Barcelona encontrarás los tratamientos más innovadores de la mano de profesionales expertas en el cuidado de la piel y el cuerpo.",
+    "services": [
+      {
+        "title": "MANICURA Y PEDICURA",
+        "description": "Tratamientos completos para tus manos y pies. Esmaltado tradicional o permanente con las mejores marcas."
+      },
+      {
+        "title": "INDIBA DEEP BEAUTY",
+        "description": "Tecnología de radiofrecuencia para rejuvenecimiento facial y corporal. Resultados visibles desde la primera sesión."
+      },
+      {
+        "title": "LIMPIEZA DE CUTIS",
+        "description": "Tratamientos faciales personalizados para hidratar, iluminar y oxigenar tu piel."
+      },
+      {
+        "title": "MICROBLADING",
+        "description": "Diseño de cejas pelo a pelo para una mirada perfecta y natural."
+      }
+    ]
+  },
+  "peluqueria": {
+    "title": "PELUQUERÍA",
+    "subtitle": "EN HAIRCUTDAY SOMOS DE LAS MEJORES PELUQUERÍAS BARCELONA",
+    "tag": "NUESTROS SERVICIOS",
+    "mainTitle": "LA MEJOR VERSIÓN DE TI",
+    "desc": "Descubre por qué nuestros clientes nos sitúan entre las mejores peluquerías de Barcelona. Un equipo apasionado, productos de élite y un ambiente diseñado para tu relax.",
+    "services": [
+      {
+        "title": "CORTE DE PELO",
+        "description": "Transforma tu estilo con nuestros expertos en corte. Diseñamos el look que mejor se adapta a tus facciones."
+      },
+      {
+        "title": "COLORACIÓN ARTÍSTICA",
+        "description": "Balayage, Babylights o colores sólidos. Utilizamos productos de alta gama como L’Oréal y Kérastase."
+      },
+      {
+        "title": "EXTENSIONES",
+        "description": "Aporta volumen y longitud con nuestras extensiones de cabello natural de la más alta calidad."
+      },
+      {
+        "title": "KERATINA Y ALISADOS",
+        "description": "Elimina el encrespamiento y consigue un cabello sedoso y brillante con nuestros tratamientos de alisado."
+      }
+    ]
+  },
+  "experiencias": {
+    "title": "EXPERIENCIAS",
+    "subtitle": "DISFRUTA DE UNA EXPERIENCIA DE BELLEZA EN BARCELONA TOTALMENTE PERSONALIZADA",
+    "tag": "MÁS QUE SOLAMENTE BELLEZA",
+    "mainTitle": "RITUALES DE CUIDADO",
+    "desc": "En Hair Cut Day Barcelona creemos que el cuidado personal es una experiencia holística. Nuestras experiencias están diseñadas para regalar o regalarse un momento de desconexión absoluta.",
+    "blocks": [
+      {
+        "title": "TU NUEVO ESTILO",
+        "text": "Diseño de imagen y transformación. Un cambio de look asesorado por nuestros mejores estilistas."
+      },
+      {
+        "title": "EXPERIENCIA PREMIUM",
+        "text": "Un bono de belleza completo que incluye tratamiento capilar, manicura y masaje facial."
+      },
+      {
+        "title": "EXPERIENCIAS PARA NOVIAS",
+        "text": "Pack exclusivo de peinado y maquillaje para que brilles en tu día más especial."
+      }
+    ]
+  },
+  "blog": {
+    "title": "BLOG",
+    "subtitle": "TENDENCIAS, CONSEJOS Y ESTILO",
+    "posts": [
+      {
+        "title": "OLAPLEX BARCELONA: TODO LO QUE DEBES SABER",
+        "excerpt": "Descubre el tratamiento que ha revolucionado el cuidado del cabello dañado."
+      },
+      {
+        "title": "PRÓTESIS CAPILARES: LA SOLUCIÓN DEFINITIVA",
+        "excerpt": "Hablamos sobre cómo recuperar la densidad capilar de forma natural."
+      },
+      {
+        "title": "TENDENCIAS DE CORTE PARA ESTE VERANO",
+        "excerpt": "Desde el Bob clásico hasta los estilos más vanguardistas."
+      }
+    ]
+  },
+  "contacto": {
+    "title": "CONTACTO",
+    "subtitle": "ESTAMOS A TU DISPOSICIÓN, ¿HABLAMOS?",
+    "formTitle": "ENVÍANOS UN MENSAJE",
+    "salonesTitle": "NUESTROS SALONES",
+    "labels": {
+      "nombre": "NOMBRE",
+      "apellidos": "APELLIDOS",
+      "email": "EMAIL",
+      "telefono": "TELÉFONO",
+      "comentarios": "COMENTARIOS",
+      "enviar": "ENVIAR MENSAJE"
+    },
+    "placeholders": {
+      "nombre": "Tu nombre",
+      "apellidos": "Tus apellidos",
+      "email": "tu@email.com",
+      "telefono": "600 000 000",
+      "comentarios": "¿En qué podemos ayudarte?"
+    },
+    "common": {
+      "verMapa": "VER EN MAPA",
+      "horario": "HORARIO",
+      "lunesSabado": "Lunes a Sábado"
+    }
+  }
+}

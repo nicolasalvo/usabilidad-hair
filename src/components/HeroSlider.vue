@@ -1,29 +1,25 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t, tm, rt } = useI18n()
 
 const currentSlide = ref(0)
-const slides = [
-  {
-    image: '/img/hero1.png',
-    title: 'THE EXPERIENCE OF YOUR LIFE',
-    subtitle: 'LUXURY HAIR SALON'
-  },
-  {
-    image: '/img/hero2.png',
-    title: 'CRAFTING BEAUTY',
-    subtitle: 'PROFESSIONAL STYLING'
-  },
-  {
-    image: '/img/hero3.png',
-    title: 'INNER RADIANCE',
-    subtitle: 'AESTHETIC CARE'
-  }
-]
+
+const slides = computed(() => {
+  // Use translation messages for slides
+  const heroMessages = tm('home.hero')
+  return heroMessages.map((slide, index) => ({
+    image: `/img/hero${index + 1}.png`,
+    title: rt(slide.title),
+    subtitle: rt(slide.subtitle)
+  }))
+})
 
 let interval = null
 
 const nextSlide = () => {
-  currentSlide.value = (currentSlide.value + 1) % slides.length
+  currentSlide.value = (currentSlide.value + 1) % slides.value.length
 }
 
 onMounted(() => {
@@ -48,7 +44,7 @@ onUnmounted(() => {
         <h2 class="subtitle">{{ slide.subtitle }}</h2>
         <h1 class="title">{{ slide.title }}</h1>
         <div class="cta">
-          <a href="#" class="btn btn-primary">DESCUBRE MÁS</a>
+          <a href="#" class="btn btn-primary">{{ $t('common.descubreMas') }}</a>
         </div>
       </div>
     </div>

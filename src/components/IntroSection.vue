@@ -2,16 +2,14 @@
   <section class="intro-section">
     <div class="container text-center">
       <div class="reveal-content">
-        <h2 class="section-tag">BIENVENIDO</h2>
-        <h1 class="main-title">EL LUJO DE SER <br> UNO MISMO</h1>
+        <h2 class="section-tag">{{ $t('home.intro.tag') }}</h2>
+        <h1 class="main-title" v-html="$t('home.intro.title').replace(' ', '<br>')"></h1>
         <div class="divider"></div>
         <p class="description">
-          En Haircut Day, creemos que la belleza es una extensión de tu personalidad. 
-          Un espacio diseñado para ofrecer algo más que un servicio: una experiencia sensorial 
-          que combina las últimas tendencias con el máximo cuidado y exclusividad.
+          {{ $t('home.intro.desc') }}
         </p>
         <div class="action">
-          <a href="#" class="btn btn-outline">CONÓCENOS</a>
+          <a href="#" class="btn btn-outline">{{ $t('common.conocenos') }}</a>
         </div>
       </div>
     </div>

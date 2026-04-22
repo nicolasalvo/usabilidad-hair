@@ -1,0 +1,183 @@
+{
+  "nav": {
+    "home": "INICI",
+    "peluqueria": "PERRUQUERIA",
+    "estetica": "ESTÈTICA",
+    "experiencias": "EXPERIÈNCIES",
+    "blog": "BLOG",
+    "salon": "SALÓ",
+    "contacto": "CONTACTE",
+    "peluqueria_items": {
+      "color": "COLOR",
+      "corte": "TALL",
+      "peinados": "PEINATS",
+      "tratamientos": "TRACTAMENTS",
+      "mechas": "MECHES",
+      "alisado": "ALLISSAT",
+      "extensiones": "EXTENSIONS",
+      "hombre": "HOME",
+      "bodas": "BODES"
+    },
+    "estetica_items": {
+      "limpieza_facial": "NETEJA FACIAL",
+      "corporales": "TRACTAMENTS CORPORALS",
+      "maquillaje": "MAQUILLATGE",
+      "manicura": "MANICURA",
+      "depilacion": "DEPILACIÓ"
+    },
+    "experiencias_items": {
+      "premium": "TRACTAMENTS PREMIUM",
+      "bono": "BO REGAL",
+      "asesoria": "ASSESSORIA D'IMATGE"
+    },
+    "salon_items": {
+      "eixample": "EIXAMPLE",
+      "les_corts": "LES CORTS",
+      "letamendi": "PLAÇA LETAMENDI",
+      "gracia": "GRÀCIA"
+    }
+  },
+  "common": {
+    "reservar": "RESERVAR",
+    "descubreMas": "DESCOBREIX MÉS",
+    "verMas": "VEURE MÉS",
+    "leerMas": "LLEGIR MÉS",
+    "conocenos": "CONEIX-NOS",
+    "pideCita": "DEMANA CITA",
+    "bienvenido": "BENVINGUT"
+  },
+  "home": {
+    "hero": [
+      { "title": "L'EXPERIÈNCIA DE LA TEVA VIDA", "subtitle": "PERRUQUERIA DE LUXE" },
+      { "title": "CREANT BELLESA", "subtitle": "ESTIL PROFESSIONAL" },
+      { "title": "LA TEVA RADIANCIA INTERIOR", "subtitle": "CURA ESTÈTICA" }
+    ],
+    "intro": {
+      "tag": "BENVINGUT",
+      "title": "EL LUXE DE SER UN MATEIX",
+      "desc": "A Haircut Day, creiem que la bellesa és una extensió de la teva personalitat. Un espai dissenyat per oferir alguna cosa més que un servei: una experiència sensorial que combina les últimes tendències amb la màxima cura i exclusivitat."
+    }
+  },
+  "footer": {
+    "brandDesc": "El teu saló de confiança a Barcelona. On l'estil i l'exclusivitat es troben.",
+    "servicios": "SERVEIS",
+    "informacion": "INFORMACIÓ",
+    "encuentranos": "TROBA'NS",
+    "derechos": "Tots els drets reservats."
+  },
+  "estetica": {
+    "title": "ESTÈTICA",
+    "subtitle": "UN CENTRE D'ESTÈTICA A BARCELONA PENSAT PER A TU",
+    "tag": "BELLESA INTEGRAL",
+    "mainTitle": "CURA I BENESTAR",
+    "desc": "Al nostre saló d'estètica a Barcelona trobaràs els tractaments més innovadors de la mà de professionals expertes en la cura de la pell i el cos.",
+    "services": [
+      {
+        "title": "MANICURA I PEDICURA",
+        "description": "Tractaments complets per a les teves mans i peus. Esmaltat tradicional o permanent amb les millors marques."
+      },
+      {
+        "title": "INDIBA DEEP BEAUTY",
+        "description": "Tecnologia de radiofreqüència per al rejoveniment facial i corporal. Resultats visibles des de la primera sessió."
+      },
+      {
+        "title": "NETEJA DE CUTIS",
+        "description": "Tractaments facials personalitzats per hidratar, il·luminar i oxigenar la teva pell."
+      },
+      {
+        "title": "MICROBLADING",
+        "description": "Disseny de celles pèl a pèl per a una mirada perfecta i natural."
+      }
+    ]
+  },
+  "peluqueria": {
+    "title": "PERRUQUERIA",
+    "subtitle": "A HAIRCUTDAY SOM DE LES MILLORS PERRUQUERIES DE BARCELONA",
+    "tag": "ELS NOSTRES SERVEIS",
+    "mainTitle": "LA MILLOR VERSIÓ DE TU",
+    "desc": "Descobreix per què els nostres clients ens situen entre les millors perruqueries de Barcelona. Un equip apassionat, productes d'elit i un ambient dissenyat per al teu relax.",
+    "services": [
+      {
+        "title": "TALL DE CABELL",
+        "description": "Transforma el teu estil amb els nostres experts en tall. Dissenyem el look que millor s'adapta a les teves faccions."
+      },
+      {
+        "title": "COLORACIÓ ARTÍSTICA",
+        "description": "Balayage, Babylights o colors sòlids. Utilitzem productes d'alta gamma com L’Oréal i Kérastase."
+      },
+      {
+        "title": "EXTENSIONS",
+        "description": "Aporta volum i longitud amb les nostres extensions de cabell natural de la més alta qualitat."
+      },
+      {
+        "title": "KERATINA I ALLISSATS",
+        "description": "Elimina l'encrespament i aconsegueix un cabell sedós i brillant amb els nostres tractaments d'allissat."
+      }
+    ]
+  },
+  "experiencias": {
+    "title": "EXPERIÈNCIES",
+    "subtitle": "GAUDEIX D'UNA EXPERIÈNCIA DE BELLESA A BARCELONA TOTALMENT PERSONALITZADA",
+    "tag": "MÉS QUE NOMÉS BELLESA",
+    "mainTitle": "RITUALS DE CURA",
+    "desc": "A Hair Cut Day Barcelona creiem que la cura personal és una experiència holística. Les nostres experiències estan dissenyades per regalar o regalar-se un moment de desconnexió absoluta.",
+    "blocks": [
+      {
+        "title": "EL TEU NOU ESTIL",
+        "text": "Disseny d'imatge i transformació. Un canvi de look assessorat pels nostres millors estilistes."
+      },
+      {
+        "title": "EXPERIÈNCIA PREMIUM",
+        "text": "Un bo de bellesa complet que inclou tractament capil·lar, manicura i massatge facial."
+      },
+      {
+        "title": "EXPERIÈNCIES PER A NÚVIES",
+        "text": "Pack exclusiu de peinat i maquillatge perquè brillis en el teu dia més especial."
+      }
+    ]
+  },
+  "blog": {
+    "title": "BLOG",
+    "subtitle": "TENDÈNCIES, CONSELLS I ESTIL",
+    "posts": [
+      {
+        "title": "OLAPLEX BARCELONA: TOT EL QUE HAS DE SABER",
+        "excerpt": "Descobreix el tractament que ha revolucionat la cura del cabell danyat."
+      },
+      {
+        "title": "PRÒTESIS CAPIL·LARS: LA SOLUCIÓ DEFINITIVA",
+        "excerpt": "Parlem sobre com recuperar la densitat capil·lar de forma natural."
+      },
+      {
+        "title": "TENDÈNCIES DE TALL PER AQUEST ESTIU",
+        "excerpt": "Des del Bob clàssic fins als estils més avantguardistes."
+      }
+    ]
+  },
+  "contacto": {
+    "title": "CONTACTE",
+    "subtitle": "ESTEM A LA TEVA DISPOSICIÓ, PARLEM?",
+    "formTitle": "ENVIA'NS UN MISSATGE",
+    "salonesTitle": "ELS NOSTRES SALONS",
+    "labels": {
+      "nombre": "NOM",
+      "apellidos": "COGNOMS",
+      "email": "EMAIL",
+      "telefono": "TELÈFON",
+      "comentarios": "COMENTARIS",
+      "enviar": "ENVIA EL MISSATGE"
+    },
+    "placeholders": {
+      "nombre": "El teu nom",
+      "apellidos": "Els teus cognoms",
+      "email": "tu@email.com",
+      "telefono": "600 000 000",
+      "comentarios": "En què et podem ajudar?"
+    },
+    "common": {
+      "verMapa": "VEURE AL MAPA",
+      "horario": "HORARI",
+      "lunesSabado": "Dilluns a Dissabte"
+    }
+  }
+}

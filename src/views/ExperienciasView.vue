@@ -1,6 +1,33 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import PageBanner from '../components/PageBanner.vue'
+
+const { t, tm, rt } = useI18n()
+
+const experiences = computed(() => {
+  const blockMessages = tm('experiencias.blocks')
+  return blockMessages.map((block, index) => ({
+    title: rt(block.title),
+    text: rt(block.text),
+    image: getExperienceImage(index),
+    action: getExperienceAction(index)
+  }))
+})
+
+const getExperienceImage = (index) => {
+  const images = [
+    '/img/experiencias.png',
+    '/img/hero1.png',
+    '/img/banner_blog.png'
+  ]
+  return images[index] || images[0]
+}
+
+const getExperienceAction = (index) => {
+  const actions = ['common.descubreMas', 'common.reservar', 'common.conocenos']
+  return actions[index] || 'common.descubreMas'
+}
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -15,46 +42,31 @@ onMounted(() => {
 <template>
   <div class="page-view">
     <PageBanner 
-      title="EXPERIENCIAS" 
-      subtitle="DISFRUTA DE UNA EXPERIENCIA DE BELLEZA EN BARCELONA TOTALMENTE PERSONALIZADA"
+      :title="t('experiencias.title')" 
+      :subtitle="t('experiencias.subtitle')"
       image="/img/banner_experiencias.png"
     />
     
     <section class="content-section container">
       <div class="intro-text reveal">
-        <h2 class="section-tag">MÁS QUE SOLAMENTE BELLEZA</h2>
-        <h1 class="section-title">RITUALES DE CUIDADO</h1>
+        <h2 class="section-tag">{{ t('experiencias.tag') }}</h2>
+        <h1 class="section-title">{{ t('experiencias.mainTitle') }}</h1>
         <p class="section-desc">
-          En Hair Cut Day Barcelona creemos que el cuidado personal es una experiencia holística. 
-          Nuestras experiencias están diseñadas para regalar o regalarse un momento de desconexión absoluta.
+          {{ t('experiencias.desc') }}
         </p>
       </div>
       
       <div class="experiences-blocks">
-        <div class="exp-block reveal">
-          <div class="exp-image" style="background-image: url('/img/experiencias.png')"></div>
+        <div 
+          v-for="(exp, index) in experiences" 
+          :key="exp.title" 
+          :class="['exp-block', 'reveal', { 'reverse': index % 2 !== 0 }]"
+        >
+          <div class="exp-image" :style="{ backgroundImage: `url(${exp.image})` }"></div>
           <div class="exp-info">
-            <h3 class="exp-title">TU NUEVO ESTILO</h3>
-            <p class="exp-text">Diseño de imagen y transformación. Un cambio de look asesorado por nuestros mejores estilistas.</p>
-            <a href="#" class="btn btn-outline">SABER MÁS</a>
-          </div>
-        </div>
-        
-        <div class="exp-block reverse reveal">
-          <div class="exp-image" style="background-image: url('/img/hero1.png')"></div>
-          <div class="exp-info">
-            <h3 class="exp-title">EXPERIENCIA PREMIUM</h3>
-            <p class="exp-text">Un bono de belleza completo que incluye tratamiento capilar, manicura y masaje facial.</p>
-            <a href="#" class="btn btn-outline">RESERVAR</a>
-          </div>
-        </div>
-        
-        <div class="exp-block reveal">
-          <div class="exp-image" style="background-image: url('/img/banner_blog.png')"></div>
-          <div class="exp-info">
-            <h3 class="exp-title">EXPERIENCIAS PARA NOVIAS</h3>
-            <p class="exp-text">Pack exclusivo de peinado y maquillaje para que brilles en tu día más especial.</p>
-            <a href="#" class="btn btn-outline">CONSULTAR</a>
+            <h3 class="exp-title">{{ exp.title }}</h3>
+            <p class="exp-text">{{ exp.text }}</p>
+            <a href="#" class="btn btn-outline">{{ t(exp.action) }}</a>
           </div>
         </div>
       </div>

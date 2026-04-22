@@ -1,30 +1,29 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import PageBanner from '../components/PageBanner.vue'
 import ServiceCard from '../components/ServiceCard.vue'
 
-const services = [
-  {
-    title: 'CORTE DE PELO',
-    description: 'Transforma tu estilo con nuestros expertos en corte. Diseñamos el look que mejor se adapta a tus facciones.',
-    image: '/img/peluqueria.png'
-  },
-  {
-    title: 'COLORACIÓN ARTÍSTICA',
-    description: 'Balayage, Babylights o colores sólidos. Utilizamos productos de alta gama como L’Oréal y Kérastase.',
-    image: '/img/hero2.png'
-  },
-  {
-    title: 'EXTENSIONES',
-    description: 'Aporta volumen y longitud con nuestras extensiones de cabello natural de la más alta calidad.',
-    image: '/img/hero1.png'
-  },
-  {
-    title: 'KERATINA Y ALISADOS',
-    description: 'Elimina el encrespamiento y consigue un cabello sedoso y brillante con nuestros tratamientos de alisado.',
-    image: '/img/banner_peluqueria.png'
-  }
-]
+const { t, tm, rt } = useI18n()
+
+const services = computed(() => {
+  const serviceMessages = tm('peluqueria.services')
+  return serviceMessages.map((service, index) => ({
+    title: rt(service.title),
+    description: rt(service.description),
+    image: getServiceImage(index)
+  }))
+})
+
+const getServiceImage = (index) => {
+  const images = [
+    '/img/peluqueria.png',
+    '/img/hero2.png',
+    '/img/hero1.png',
+    '/img/banner_peluqueria.png'
+  ]
+  return images[index] || images[0]
+}
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -39,18 +38,17 @@ onMounted(() => {
 <template>
   <div class="page-view">
     <PageBanner 
-      title="PELUQUERÍA" 
-      subtitle="EN HAIRCUTDAY SOMOS DE LAS MEJORES PELUQUERÍAS BARCELONA"
+      :title="t('peluqueria.title')" 
+      :subtitle="t('peluqueria.subtitle')"
       image="/img/banner_peluqueria.png"
     />
     
     <section class="content-section container">
       <div class="intro-text reveal">
-        <h2 class="section-tag">NUESTROS SERVICIOS</h2>
-        <h1 class="section-title">LA MEJOR VERSIÓN DE TI</h1>
+        <h2 class="section-tag">{{ t('peluqueria.tag') }}</h2>
+        <h1 class="section-title">{{ t('peluqueria.mainTitle') }}</h1>
         <p class="section-desc">
-          Descubre por qué nuestros clientes nos sitúan entre las mejores peluquerías de Barcelona. 
-          Un equipo apasionado, productos de élite y un ambiente diseñado para tu relax.
+          {{ t('peluqueria.desc') }}
         </p>
       </div>
       

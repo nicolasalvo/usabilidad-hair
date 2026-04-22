@@ -1,6 +1,9 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import LanguageSwitcher from './LanguageSwitcher.vue'
+
+const { t } = useI18n()
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
@@ -17,65 +20,65 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
 }
 
-const navigation = [
+const navigation = computed(() => [
   { 
-    name: 'HOME', 
+    name: t('nav.home'), 
     path: '/' 
   },
   { 
-    name: 'PELUQUERÍA', 
+    name: t('nav.peluqueria'), 
     path: '/peluqueria',
     dropdown: [
-      { name: 'COLOR', path: '#' },
-      { name: 'CORTE', path: '#' },
-      { name: 'PEINADOS', path: '#' },
-      { name: 'TRATAMIENTOS', path: '#' },
-      { name: 'MECHAS', path: '#' },
-      { name: 'ALISADO', path: '#' },
-      { name: 'EXTENSIONES', path: '#' },
-      { name: 'HOMBRE', path: '#' },
-      { name: 'BODAS', path: '#' }
+      { name: t('nav.peluqueria_items.color'), path: '#' },
+      { name: t('nav.peluqueria_items.corte'), path: '#' },
+      { name: t('nav.peluqueria_items.peinados'), path: '#' },
+      { name: t('nav.peluqueria_items.tratamientos'), path: '#' },
+      { name: t('nav.peluqueria_items.mechas'), path: '#' },
+      { name: t('nav.peluqueria_items.alisado'), path: '#' },
+      { name: t('nav.peluqueria_items.extensiones'), path: '#' },
+      { name: t('nav.peluqueria_items.hombre'), path: '#' },
+      { name: t('nav.peluqueria_items.bodas'), path: '#' }
     ]
   },
   { 
-    name: 'ESTÉTICA', 
+    name: t('nav.estetica'), 
     path: '/estetica',
     dropdown: [
-      { name: 'LIMPIEZA FACIAL', path: '#' },
-      { name: 'TRATAMIENTOS CORPORALES', path: '#' },
-      { name: 'MAQUILLAJE', path: '#' },
-      { name: 'MANICURA', path: '#' },
-      { name: 'DEPILACIÓN', path: '#' }
+      { name: t('nav.estetica_items.limpieza_facial'), path: '#' },
+      { name: t('nav.estetica_items.corporales'), path: '#' },
+      { name: t('nav.estetica_items.maquillaje'), path: '#' },
+      { name: t('nav.estetica_items.manicura'), path: '#' },
+      { name: t('nav.estetica_items.depilacion'), path: '#' }
     ]
   },
   { 
-    name: 'EXPERIENCIAS', 
+    name: t('nav.experiencias'), 
     path: '/experiencias',
     dropdown: [
-      { name: 'TRATAMIENTOS PREMIUM', path: '#' },
-      { name: 'BONO REGALO', path: '#' },
-      { name: 'ASESORÍA DE IMAGEN', path: '#' }
+      { name: t('nav.experiencias_items.premium'), path: '#' },
+      { name: t('nav.experiencias_items.bono'), path: '#' },
+      { name: t('nav.experiencias_items.asesoria'), path: '#' }
     ]
   },
   { 
-    name: 'BLOG', 
+    name: t('nav.blog'), 
     path: '/blog' 
   },
   { 
-    name: 'SALÓN', 
+    name: t('nav.salon'), 
     path: '#',
     dropdown: [
-      { name: 'EIXAMPLE', path: '#' },
-      { name: 'LES CORTS', path: '#' },
-      { name: 'PLAZA LETAMENDI', path: '#' },
-      { name: 'GRACIA', path: '#' }
+      { name: t('nav.salon_items.eixample'), path: '#' },
+      { name: t('nav.salon_items.les_corts'), path: '#' },
+      { name: t('nav.salon_items.letamendi'), path: '#' },
+      { name: t('nav.salon_items.gracia'), path: '#' }
     ]
   },
   { 
-    name: 'CONTACTO', 
+    name: t('nav.contacto'), 
     path: '/contacto' 
   }
-]
+])
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
@@ -138,7 +141,7 @@ onUnmounted(() => {
         <div class="header-lang">
           <LanguageSwitcher />
         </div>
-        <a href="#" class="btn btn-reservar header-cta">RESERVAR</a>
+        <a href="#" class="btn btn-reservar header-cta">{{ $t('common.reservar') }}</a>
         <button class="hamburger" @click="toggleMobileMenu">
           <span></span>
           <span></span>

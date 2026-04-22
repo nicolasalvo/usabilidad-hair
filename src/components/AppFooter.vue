@@ -3,7 +3,7 @@
     <div class="container footer-grid">
       <div class="footer-col brand-col">
         <h2 class="footer-logo">HAIRCUT DAY</h2>
-        <p class="brand-desc">Tu salón de confianza en Barcelona. Donde el estilo y la exclusividad se encuentran.</p>
+        <p class="brand-desc">{{ $t('footer.brandDesc') }}</p>
         <div class="social-links">
           <a href="#" class="social-link">IG</a>
           <a href="#" class="social-link">FB</a>
@@ -12,29 +12,29 @@
       </div>
       
       <div class="footer-col">
-        <h3 class="col-title">SERVICIOS</h3>
+        <h3 class="col-title">{{ $t('footer.servicios') }}</h3>
         <ul class="footer-links">
-          <li><a href="#">Peluquería</a></li>
-          <li><a href="#">Estética</a></li>
-          <li><a href="#">Experiencias</a></li>
-          <li><a href="#">Extensiones</a></li>
-          <li><a href="#">Novias</a></li>
+          <li><a href="#">{{ $t('nav.peluqueria') }}</a></li>
+          <li><a href="#">{{ $t('nav.estetica') }}</a></li>
+          <li><a href="#">{{ $t('nav.experiencias') }}</a></li>
+          <li><a href="#">{{ $t('nav.peluqueria_items.extensiones') }}</a></li>
+          <li><a href="#">{{ $t('nav.peluqueria_items.bodas') }}</a></li>
         </ul>
       </div>
       
       <div class="footer-col">
-        <h3 class="col-title">INFORMACIÓN</h3>
+        <h3 class="col-title">{{ $t('footer.informacion') }}</h3>
         <ul class="footer-links">
-          <li><a href="#">Nuestro Salón</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#">{{ $t('nav.salon') }}</a></li>
+          <li><a href="#">{{ $t('nav.blog') }}</a></li>
+          <li><a href="#">{{ $t('nav.contacto') }}</a></li>
           <li><a href="#">Aviso Legal</a></li>
           <li><a href="#">Política de Privacidad</a></li>
         </ul>
       </div>
       
       <div class="footer-col">
-        <h3 class="col-title">ENCUÉNTRANOS</h3>
+        <h3 class="col-title">{{ $t('footer.encuentranos') }}</h3>
         <p class="contact-info">
           Carrer de Mallorca, 214<br>
           08008 Barcelona<br><br>
@@ -42,14 +42,14 @@
           E: hola@haircutday.com
         </p>
         <div class="booking-cta">
-          <a href="#" class="btn btn-primary">PIDE CITA</a>
+          <a href="#" class="btn btn-primary">{{ $t('common.pideCita') }}</a>
         </div>
       </div>
     </div>
     
     <div class="footer-bottom">
       <div class="container flex-bottom">
-        <p>&copy; 2026 HAIRCUT DAY. Todos los derechos reservados.</p>
+        <p>&copy; 2026 HAIRCUT DAY. {{ $t('footer.derechos') }}</p>
         <p>Made with &hearts; in Barcelona</p>
       </div>
     </div>

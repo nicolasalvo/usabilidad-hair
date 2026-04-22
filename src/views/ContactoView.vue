@@ -1,24 +1,27 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import PageBanner from '../components/PageBanner.vue'
 
-const locations = [
+const { t } = useI18n()
+
+const locations = computed(() => [
   {
-    name: 'EIXAMPLE',
+    name: t('nav.salon_items.eixample'),
     address: 'Carrer de Mallorca, 214',
     phone: '+34 931 190 286'
   },
   {
-    name: 'LES CORTS',
+    name: t('nav.salon_items.les_corts'),
     address: 'Carrer de la Infanta Carlota de Joaquín, 23',
     phone: '+34 933 158 578'
   },
   {
-    name: 'LETAMENDI',
+    name: t('nav.salon_items.letamendi'),
     address: 'Carrer d’Enric Granados, 15',
     phone: '+34 932 506 637'
   }
-]
+])
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
@@ -33,60 +36,60 @@ onMounted(() => {
 <template>
   <div class="page-view">
     <PageBanner 
-      title="CONTACTO" 
-      subtitle="ESTAMOS A TU DISPOSICIÓN, ¿HABLAMOS?"
+      :title="t('contacto.title')" 
+      :subtitle="t('contacto.subtitle')"
       image="/img/banner_contacto.png"
     />
     
     <section class="content-section container">
       <div class="contact-grid">
         <div class="contact-form-side reveal">
-          <h2 class="form-title">ENVÍANOS UN MENSAJE</h2>
+          <h2 class="form-title">{{ t('contacto.formTitle') }}</h2>
           <form class="contact-form" @submit.prevent>
             <div class="form-row">
               <div class="form-group">
-                <label>NOMBRE</label>
-                <input type="text" placeholder="Tu nombre">
+                <label>{{ t('contacto.labels.nombre') }}</label>
+                <input type="text" :placeholder="t('contacto.placeholders.nombre')">
               </div>
               <div class="form-group">
-                <label>APELLIDOS</label>
-                <input type="text" placeholder="Tus apellidos">
+                <label>{{ t('contacto.labels.apellidos') }}</label>
+                <input type="text" :placeholder="t('contacto.placeholders.apellidos')">
               </div>
             </div>
             
             <div class="form-row">
               <div class="form-group">
-                <label>EMAIL</label>
-                <input type="email" placeholder="tu@email.com">
+                <label>{{ t('contacto.labels.email') }}</label>
+                <input type="email" :placeholder="t('contacto.placeholders.email')">
               </div>
               <div class="form-group">
-                <label>TELÉFONO</label>
-                <input type="tel" placeholder="600 000 000">
+                <label>{{ t('contacto.labels.telefono') }}</label>
+                <input type="tel" :placeholder="t('contacto.placeholders.telefono')">
               </div>
             </div>
             
             <div class="form-group">
-              <label>COMENTARIOS</label>
-              <textarea placeholder="¿En qué podemos ayudarte?"></textarea>
+              <label>{{ t('contacto.labels.comentarios') }}</label>
+              <textarea :placeholder="t('contacto.placeholders.comentarios')"></textarea>
             </div>
             
-            <button class="btn btn-primary">ENVIAR MENSAJE</button>
+            <button class="btn btn-primary">{{ t('contacto.labels.enviar') }}</button>
           </form>
         </div>
         
         <div class="locations-side reveal">
-          <h2 class="form-title">NUESTROS SALONES</h2>
+          <h2 class="form-title">{{ t('contacto.salonesTitle') }}</h2>
           <div class="location-items">
             <div v-for="loc in locations" :key="loc.name" class="location-item">
               <h3 class="loc-name">{{ loc.name }}</h3>
               <p class="loc-address">{{ loc.address }}</p>
               <p class="loc-phone">{{ loc.phone }}</p>
-              <a href="#" class="view-map">VER EN MAPA</a>
+              <a href="#" class="view-map">{{ t('contacto.common.verMapa') }}</a>
             </div>
           </div>
           
           <div class="contact-meta">
-            <p><strong>HORARIO:</strong> Lunes a Sábado 10:00 - 21:00</p>
+            <p><strong>{{ t('contacto.common.horario') }}:</strong> {{ t('contacto.common.lunesSabado') }} 10:00 - 21:00</p>
             <p><strong>EMAIL:</strong> hola@haircutday.com</p>
           </div>
         </div>

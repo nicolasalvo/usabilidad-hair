@@ -1,5 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
 
 const languages = [
   { 
@@ -40,11 +43,14 @@ const languages = [
   }
 ]
 
-const currentLanguage = ref(languages[0])
+const currentLanguage = computed(() => {
+  return languages.find(l => l.code === locale.value) || languages[0]
+})
+
 const isOpen = ref(false)
 
 const selectLanguage = (lang) => {
-  currentLanguage.value = lang
+  locale.value = lang.code
   isOpen.value = false
 }
 </script>

@@ -1,0 +1,183 @@
+{
+  "nav": {
+    "home": "HOME",
+    "peluqueria": "HAIRDRESSING",
+    "estetica": "AESTHETICS",
+    "experiencias": "EXPERIENCES",
+    "blog": "BLOG",
+    "salon": "SALON",
+    "contacto": "CONTACT",
+    "peluqueria_items": {
+      "color": "COLOR",
+      "corte": "HAIRCUT",
+      "peinados": "STYLING",
+      "tratamientos": "TREATMENTS",
+      "mechas": "HIGHLIGHTS",
+      "alisado": "STRAIGHTENING",
+      "extensiones": "EXTENSIONS",
+      "hombre": "MEN",
+      "bodas": "WEDDINGS"
+    },
+    "estetica_items": {
+      "limpieza_facial": "FACIAL CLEANSING",
+      "corporales": "BODY TREATMENTS",
+      "maquillaje": "MAKEUP",
+      "manicura": "MANICURE",
+      "depilacion": "WAXING"
+    },
+    "experiencias_items": {
+      "premium": "PREMIUM TREATMENTS",
+      "bono": "GIFT VOUCHER",
+      "asesoria": "IMAGE CONSULTANCY"
+    },
+    "salon_items": {
+      "eixample": "EIXAMPLE",
+      "les_corts": "LES CORTS",
+      "letamendi": "LETAMENDI SQUARE",
+      "gracia": "GRÀCIA"
+    }
+  },
+  "common": {
+    "reservar": "BOOK NOW",
+    "descubreMas": "DISCOVER MORE",
+    "viewMore": "VIEW MORE",
+    "readMore": "READ MORE",
+    "conocenos": "KNOW US",
+    "pideCita": "BOOK APPOINTMENT",
+    "bienvenido": "WELCOME"
+  },
+  "home": {
+    "hero": [
+      { "title": "THE EXPERIENCE OF YOUR LIFE", "subtitle": "LUXURY HAIR SALON" },
+      { "title": "CRAFTING BEAUTY", "subtitle": "PROFESSIONAL STYLING" },
+      { "title": "YOUR INNER RADIANCE", "subtitle": "AESTHETIC CARE" }
+    ],
+    "intro": {
+      "tag": "WELCOME",
+      "title": "THE LUXURY OF BEING YOURSELF",
+      "desc": "At Haircut Day, we believe that beauty is an extension of your personality. A space designed to offer more than just a service: a sensory experience that combines the latest trends with maximum care and exclusivity."
+    }
+  },
+  "footer": {
+    "brandDesc": "Your trusted salon in Barcelona. Where style and exclusivity meet.",
+    "servicios": "SERVICES",
+    "informacion": "INFORMATION",
+    "encuentranos": "FIND US",
+    "derechos": "All rights reserved."
+  },
+  "estetica": {
+    "title": "AESTHETICS",
+    "subtitle": "An Aesthetics Center in Barcelona Designed for You",
+    "tag": "INTEGRAL BEAUTY",
+    "mainTitle": "CARE AND WELL-BEING",
+    "desc": "In our aesthetics salon in Barcelona you will find the most innovative treatments by expert professionals in skin and body care.",
+    "services": [
+      {
+        "title": "MANICURE AND PEDICURE",
+        "description": "Complete treatments for your hands and feet. Traditional or permanent enamelling with the best brands."
+      },
+      {
+        "title": "INDIBA DEEP BEAUTY",
+        "description": "Radiofrequency technology for facial and body rejuvenation. Visible results from the first session."
+      },
+      {
+        "title": "FACIAL CLEANSING",
+        "description": "Personalized facial treatments to hydrate, illuminate and oxygenate your skin."
+      },
+      {
+        "title": "MICROBLADING",
+        "description": "Eyebrow design hair by hair for a perfect and natural look."
+      }
+    ]
+  },
+  "peluqueria": {
+    "title": "HAIRDRESSING",
+    "subtitle": "AT HAIRCUTDAY WE ARE ONE OF THE BEST HAIRDRESSERS IN BARCELONA",
+    "tag": "OUR SERVICES",
+    "mainTitle": "THE BEST VERSION OF YOU",
+    "desc": "Discover why our clients place us among the best hairdressers in Barcelona. A passionate team, elite products and an environment designed for your relaxation.",
+    "services": [
+      {
+        "title": "HAIRCUT",
+        "description": "Transform your style with our haircut experts. We design the look that best suits your features."
+      },
+      {
+        "title": "ARTISTIC COLORING",
+        "description": "Balayage, Babylights or solid colors. We use high-end products such as L’Oréal and Kérastase."
+      },
+      {
+        "title": "EXTENSIONS",
+        "description": "Provide volume and length with our highest quality natural hair extensions."
+      },
+      {
+        "title": "KERATIN AND STRAIGHTENING",
+        "description": "Eliminate frizz and achieve silky, shiny hair with our straightening treatments."
+      }
+    ]
+  },
+  "experiencias": {
+    "title": "EXPERIENCES",
+    "subtitle": "ENJOY A TOTALLY PERSONALIZED BEAUTY EXPERIENCE IN BARCELONA",
+    "tag": "MORE THAN JUST BEAUTY",
+    "mainTitle": "CARE RITUALS",
+    "desc": "At Hair Cut Day Barcelona we believe that personal care is a holistic experience. Our experiences are designed for give as a gift or to treat yourself to a moment of absolute disconnection.",
+    "blocks": [
+      {
+        "title": "YOUR NEW STYLE",
+        "text": "Image design and transformation. A change of look advised by our best stylists."
+      },
+      {
+        "title": "PREMIUM EXPERIENCE",
+        "text": "A complete beauty voucher that includes hair treatment, manicure and facial massage."
+      },
+      {
+        "title": "EXPERIENCES FOR BRIDES",
+        "text": "Exclusive hair and makeup pack so you shine on your most special day."
+      }
+    ]
+  },
+  "blog": {
+    "title": "BLOG",
+    "subtitle": "TRENDS, TIPS AND STYLE",
+    "posts": [
+      {
+        "title": "OLAPLEX BARCELONA: EVERYTHING YOU NEED TO KNOW",
+        "excerpt": "Discover the treatment that has revolutionized the care of damaged hair."
+      },
+      {
+        "title": "CAPILLARY PROSTHESES: THE DEFINITIVE SOLUTION",
+        "excerpt": "We talk about how to recover hair density naturally."
+      },
+      {
+        "title": "HAIRCUT TRENDS FOR THIS SUMMER",
+        "excerpt": "From the classic Bob to the most avant-garde styles."
+      }
+    ]
+  },
+  "contacto": {
+    "title": "CONTACT",
+    "subtitle": "WE ARE AT YOUR DISPOSAL, SHALL WE TALK?",
+    "formTitle": "SEND US A MESSAGE",
+    "salonesTitle": "OUR SALONS",
+    "labels": {
+      "nombre": "NAME",
+      "apellidos": "SURNAME",
+      "email": "EMAIL",
+      "telefono": "PHONE",
+      "comentarios": "COMMENTS",
+      "enviar": "SEND MESSAGE"
+    },
+    "placeholders": {
+      "nombre": "Your name",
+      "apellidos": "Your surname",
+      "email": "you@email.com",
+      "telefono": "600 000 000",
+      "comentarios": "How can we help you?"
+    },
+    "common": {
+      "verMapa": "VIEW ON MAP",
+      "horario": "HOURS",
+      "lunesSabado": "Monday to Saturday"
+    }
+  }
+}
