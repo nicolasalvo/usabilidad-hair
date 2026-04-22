@@ -210,6 +210,7 @@ onMounted(() => {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-xl);
+    padding: 0 15px;
   }
 }
 

@@ -146,6 +146,8 @@ const services = [
   .grid {
     grid-template-columns: repeat(2, 1fr);
     height: auto;
+    padding: 0 15px;
+    gap: 15px;
   }
   .service-item {
     height: 40vh;

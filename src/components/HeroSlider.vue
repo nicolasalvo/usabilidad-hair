@@ -111,7 +111,7 @@ onUnmounted(() => {
 }
 
 .subtitle {
-  font-size: 0.9rem;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
   letter-spacing: 0.4em;
   margin-bottom: 1rem;
   font-weight: 300;
@@ -121,13 +121,14 @@ onUnmounted(() => {
 }
 
 .title {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-size: clamp(1.8rem, 8vw, 4.5rem);
   line-height: 1.1;
   margin-bottom: 2rem;
   font-weight: 900;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease 0.8s;
+  padding: 0 15px;
 }
 
 .cta {

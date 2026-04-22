@@ -51,7 +51,7 @@ defineProps({
 }
 
 .subtitle {
-  font-size: 0.8rem;
+  font-size: clamp(0.6rem, 1.5vw, 0.8rem);
   letter-spacing: 0.4em;
   margin-bottom: 1rem;
   font-weight: 300;
@@ -59,13 +59,14 @@ defineProps({
 }
 
 .title {
-  font-size: clamp(2rem, 6vw, 4rem);
+  font-size: clamp(1.5rem, 5vw, 4rem);
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 2rem;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 20px;
 }
 
 .breadcrumbs {
