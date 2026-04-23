@@ -178,6 +178,12 @@
       "verMapa": "VIEW ON MAP",
       "horario": "HOURS",
       "lunesSabado": "Monday to Saturday"
+    },
+    "validation": {
+      "required": "This field is required",
+      "email": "The email format is invalid",
+      "telefono": "The phone number must be exactly 9 characters",
+      "success": "Message sent successfully! We will contact you soon."
     }
   }
 }

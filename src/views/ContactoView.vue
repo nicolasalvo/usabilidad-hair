@@ -1,9 +1,92 @@
 <script setup>
-import { onMounted, computed } from 'vue'
+import { onMounted, computed, reactive, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import PageBanner from '../components/PageBanner.vue'
 
 const { t } = useI18n()
+
+const formData = reactive({
+  nombre: '',
+  apellidos: '',
+  email: '',
+  telefono: '',
+  comentarios: ''
+})
+
+const errors = reactive({
+  nombre: false,
+  apellidos: false,
+  email: false,
+  telefono: false,
+  comentarios: false
+})
+
+const isEmailValid = (email) => {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
+const submitted = ref(false)
+
+const validateForm = () => {
+  let isValid = true
+  
+  // Reset all errors
+  Object.keys(errors).forEach(key => errors[key] = false)
+  
+  // Name
+  if (!formData.nombre.trim()) {
+    errors.nombre = true
+    isValid = false
+  }
+  
+  // Surnames
+  if (!formData.apellidos.trim()) {
+    errors.apellidos = true
+    isValid = false
+  }
+  
+  // Email
+  if (!formData.email.trim()) {
+    errors.email = true
+    isValid = false
+  } else if (!isEmailValid(formData.email)) {
+    errors.email = 'format'
+    isValid = false
+  }
+  
+  // Phone
+  if (!formData.telefono.trim()) {
+    errors.telefono = true
+    isValid = false
+  } else if (formData.telefono.replace(/\s/g, '').length !== 9) {
+    errors.telefono = 'length'
+    isValid = false
+  }
+  
+  // Comments
+  if (!formData.comentarios.trim()) {
+    errors.comentarios = true
+    isValid = false
+  }
+  
+  return isValid
+}
+
+const submitForm = () => {
+  if (validateForm()) {
+    console.log('Form submitted:', formData)
+    submitted.value = true
+    // Reset form
+    Object.keys(formData).forEach(key => formData[key] = '')
+    // Reset errors
+    Object.keys(errors).forEach(key => errors[key] = false)
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      submitted.value = false
+    }, 5000)
+  }
+}
 
 const locations = computed(() => [
   {
@@ -45,32 +128,68 @@ onMounted(() => {
       <div class="contact-grid">
         <div class="contact-form-side reveal">
           <h2 class="form-title">{{ t('contacto.formTitle') }}</h2>
-          <form class="contact-form" @submit.prevent>
+          
+          <div v-if="submitted" class="success-message">
+            {{ t('contacto.validation.success') }}
+          </div>
+
+          <form class="contact-form" @submit.prevent="submitForm">
             <div class="form-row">
-              <div class="form-group">
-                <label>{{ t('contacto.labels.nombre') }}</label>
-                <input type="text" :placeholder="t('contacto.placeholders.nombre')">
+              <div class="form-group" :class="{ 'has-error': errors.nombre }">
+                <label>{{ t('contacto.labels.nombre') }} *</label>
+                <input 
+                  type="text" 
+                  v-model="formData.nombre"
+                  :placeholder="t('contacto.placeholders.nombre')"
+                  @input="errors.nombre = false"
+                >
+                <span v-if="errors.nombre" class="error-text">{{ t('contacto.validation.required') }}</span>
               </div>
-              <div class="form-group">
-                <label>{{ t('contacto.labels.apellidos') }}</label>
-                <input type="text" :placeholder="t('contacto.placeholders.apellidos')">
+              <div class="form-group" :class="{ 'has-error': errors.apellidos }">
+                <label>{{ t('contacto.labels.apellidos') }} *</label>
+                <input 
+                  type="text" 
+                  v-model="formData.apellidos"
+                  :placeholder="t('contacto.placeholders.apellidos')"
+                  @input="errors.apellidos = false"
+                >
+                <span v-if="errors.apellidos" class="error-text">{{ t('contacto.validation.required') }}</span>
               </div>
             </div>
             
             <div class="form-row">
-              <div class="form-group">
-                <label>{{ t('contacto.labels.email') }}</label>
-                <input type="email" :placeholder="t('contacto.placeholders.email')">
+              <div class="form-group" :class="{ 'has-error': errors.email }">
+                <label>{{ t('contacto.labels.email') }} *</label>
+                <input 
+                  type="email" 
+                  v-model="formData.email"
+                  :placeholder="t('contacto.placeholders.email')"
+                  @input="errors.email = false"
+                >
+                <span v-if="errors.email === true" class="error-text">{{ t('contacto.validation.required') }}</span>
+                <span v-if="errors.email === 'format'" class="error-text">{{ t('contacto.validation.email') }}</span>
               </div>
-              <div class="form-group">
-                <label>{{ t('contacto.labels.telefono') }}</label>
-                <input type="tel" :placeholder="t('contacto.placeholders.telefono')">
+              <div class="form-group" :class="{ 'has-error': errors.telefono }">
+                <label>{{ t('contacto.labels.telefono') }} *</label>
+                <input 
+                  type="tel" 
+                  v-model="formData.telefono"
+                  :placeholder="t('contacto.placeholders.telefono')"
+                  @input="errors.telefono = false"
+                >
+                <span v-if="errors.telefono === true" class="error-text">{{ t('contacto.validation.required') }}</span>
+                <span v-if="errors.telefono === 'length'" class="error-text">{{ t('contacto.validation.telefono') }}</span>
               </div>
             </div>
             
-            <div class="form-group">
-              <label>{{ t('contacto.labels.comentarios') }}</label>
-              <textarea :placeholder="t('contacto.placeholders.comentarios')"></textarea>
+            <div class="form-group" :class="{ 'has-error': errors.comentarios }">
+              <label>{{ t('contacto.labels.comentarios') }} *</label>
+              <textarea 
+                v-model="formData.comentarios"
+                :placeholder="t('contacto.placeholders.comentarios')"
+                @input="errors.comentarios = false"
+              ></textarea>
+              <span v-if="errors.comentarios" class="error-text">{{ t('contacto.validation.required') }}</span>
             </div>
             
             <button class="btn btn-primary">{{ t('contacto.labels.enviar') }}</button>
@@ -207,6 +326,37 @@ onMounted(() => {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+.form-group input.error, .form-group textarea.error {
+  border-color: #ff4d4d;
+}
+
+.error-text {
+  color: #ff4d4d;
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-top: 0.2rem;
+  letter-spacing: 0.05em;
+}
+
+.has-error input, .has-error textarea {
+  border-color: #ff4d4d !important;
+}
+
+.success-message {
+  background-color: #f0fdf4;
+  color: #166534;
+  padding: 1rem;
+  border-left: 4px solid #22c55e;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 992px) {

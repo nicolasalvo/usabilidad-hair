@@ -178,6 +178,12 @@
       "verMapa": "VEURE AL MAPA",
       "horario": "HORARI",
       "lunesSabado": "Dilluns a Dissabte"
+    },
+    "validation": {
+      "required": "Aquest camp és obligatori",
+      "email": "El format de l'email no és vàlid",
+      "telefono": "El telèfon ha de tenir exactament 9 caràcters",
+      "success": "Missatge enviat amb èxit! Ens posarem en contacte amb tu aviat."
     }
   }
 }

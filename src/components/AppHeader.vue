@@ -21,12 +21,12 @@ const handleScroll = () => {
 }
 
 const navigation = computed(() => [
-  { 
-    name: t('nav.home'), 
-    path: '/' 
+  {
+    name: t('nav.home'),
+    path: '/'
   },
-  { 
-    name: t('nav.peluqueria'), 
+  {
+    name: t('nav.peluqueria'),
     path: '/peluqueria',
     dropdown: [
       { name: t('nav.peluqueria_items.color'), path: '#' },
@@ -40,8 +40,8 @@ const navigation = computed(() => [
       { name: t('nav.peluqueria_items.bodas'), path: '#' }
     ]
   },
-  { 
-    name: t('nav.estetica'), 
+  {
+    name: t('nav.estetica'),
     path: '/estetica',
     dropdown: [
       { name: t('nav.estetica_items.limpieza_facial'), path: '#' },
@@ -51,8 +51,8 @@ const navigation = computed(() => [
       { name: t('nav.estetica_items.depilacion'), path: '#' }
     ]
   },
-  { 
-    name: t('nav.experiencias'), 
+  {
+    name: t('nav.experiencias'),
     path: '/experiencias',
     dropdown: [
       { name: t('nav.experiencias_items.premium'), path: '#' },
@@ -60,23 +60,13 @@ const navigation = computed(() => [
       { name: t('nav.experiencias_items.asesoria'), path: '#' }
     ]
   },
-  { 
-    name: t('nav.blog'), 
-    path: '/blog' 
+  {
+    name: t('nav.blog'),
+    path: '/blog'
   },
-  { 
-    name: t('nav.salon'), 
-    path: '#',
-    dropdown: [
-      { name: t('nav.salon_items.eixample'), path: '#' },
-      { name: t('nav.salon_items.les_corts'), path: '#' },
-      { name: t('nav.salon_items.letamendi'), path: '#' },
-      { name: t('nav.salon_items.gracia'), path: '#' }
-    ]
-  },
-  { 
-    name: t('nav.contacto'), 
-    path: '/contacto' 
+  {
+    name: t('nav.contacto'),
+    path: '/contacto'
   }
 ])
 
@@ -96,8 +86,9 @@ onUnmounted(() => {
         <RouterLink to="/" class="logo-link">
           <div class="logo-icon">
             <svg viewBox="0 0 100 100" class="hd-icon">
-              <circle cx="50" cy="50" r="48" fill="none" stroke="black" stroke-width="4"/>
-              <text x="50" y="65" text-anchor="middle" font-family="Lato, sans-serif" font-weight="900" font-size="40" fill="black">HD</text>
+              <circle cx="50" cy="50" r="48" fill="none" stroke="black" stroke-width="4" />
+              <text x="50" y="65" text-anchor="middle" font-family="Lato, sans-serif" font-weight="900" font-size="40"
+                fill="black">HD</text>
             </svg>
           </div>
           <div class="logo-text">
@@ -106,14 +97,15 @@ onUnmounted(() => {
           </div>
         </RouterLink>
       </div>
-      
+
       <nav :class="['nav', { 'mobile-open': isMobileMenuOpen }]">
         <div class="mobile-menu-header">
-           <RouterLink @click="closeMobileMenu" to="/" class="logo-link mobile-logo">
+          <RouterLink @click="closeMobileMenu" to="/" class="logo-link mobile-logo">
             <div class="logo-icon">
               <svg viewBox="0 0 100 100" class="hd-icon">
-                <circle cx="50" cy="50" r="48" fill="none" stroke="black" stroke-width="4"/>
-                <text x="50" y="65" text-anchor="middle" font-family="Lato, sans-serif" font-weight="900" font-size="40" fill="black">HD</text>
+                <circle cx="50" cy="50" r="48" fill="none" stroke="black" stroke-width="4" />
+                <text x="50" y="65" text-anchor="middle" font-family="Lato, sans-serif" font-weight="900" font-size="40"
+                  fill="black">HD</text>
               </svg>
             </div>
           </RouterLink>
@@ -125,7 +117,7 @@ onUnmounted(() => {
               {{ item.name }}
               <span v-if="item.dropdown" class="arrow-icon">▼</span>
             </RouterLink>
-            
+
             <div v-if="item.dropdown" class="dropdown">
               <ul>
                 <li v-for="sub in item.dropdown" :key="sub.name">
@@ -136,7 +128,7 @@ onUnmounted(() => {
           </li>
         </ul>
       </nav>
-      
+
       <div class="header-actions">
         <div class="header-lang">
           <LanguageSwitcher />
@@ -164,7 +156,7 @@ onUnmounted(() => {
   background-color: #ffffff;
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.05);
   transition: height 0.3s ease;
 }
 
@@ -257,7 +249,7 @@ onUnmounted(() => {
   left: 0;
   background-color: #ffffff;
   min-width: 200px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   padding: 15px 0;
   opacity: 0;
   visibility: hidden;
@@ -356,7 +348,7 @@ onUnmounted(() => {
     display: flex;
     margin-left: 5px;
   }
-  
+
   .nav {
     position: fixed;
     top: 0;
@@ -368,17 +360,17 @@ onUnmounted(() => {
     flex-direction: column;
     padding: 30px;
     transition: right 0.4s cubic-bezier(0.5, 0, 0, 1);
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
     display: flex;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
-  
+
   .nav.mobile-open {
     right: 0;
     top: 0;
   }
-  
+
   .nav ul {
     flex-direction: column;
     width: 100%;
@@ -391,7 +383,7 @@ onUnmounted(() => {
     border-bottom: 1px solid #f0f0f0;
     text-align: left;
   }
-  
+
   .nav-link {
     padding: 15px 0;
     font-size: 14px;
@@ -400,7 +392,7 @@ onUnmounted(() => {
     width: 100%;
     color: #666;
   }
-  
+
   .mobile-menu-header {
     display: flex;
     justify-content: space-between;
@@ -408,7 +400,7 @@ onUnmounted(() => {
     margin-bottom: 30px;
     height: 45px;
   }
-  
+
   .close-btn {
     background: none;
     border: none;
@@ -421,7 +413,7 @@ onUnmounted(() => {
     align-items: center;
     justify-content: center;
   }
-  
+
   .dropdown {
     position: static;
     opacity: 1;
@@ -435,7 +427,7 @@ onUnmounted(() => {
     display: none;
     text-align: left;
   }
-  
+
   .nav-item:hover .dropdown {
     display: block;
   }
@@ -444,7 +436,7 @@ onUnmounted(() => {
     padding: 10px 25px;
     font-size: 11px;
   }
-  
+
   .header-cta {
     padding: 8px 15px;
     font-size: 10px;
@@ -457,7 +449,7 @@ onUnmounted(() => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1150;
   backdrop-filter: blur(4px);
 }
@@ -466,20 +458,21 @@ onUnmounted(() => {
   .header-content {
     padding: 0 15px;
   }
-  
+
   .brand-name {
     font-size: 1rem;
   }
 
   .logo-text {
-    display: none; /* Hide text on very small phones to leave space for language + burger */
+    display: none;
+    /* Hide text on very small phones to leave space for language + burger */
   }
 
   .logo-icon {
     width: 40px;
     height: 40px;
   }
-  
+
   .header-actions .header-cta {
     display: none !important;
   }

@@ -178,6 +178,12 @@
       "verMapa": "VER EN MAPA",
       "horario": "HORARIO",
       "lunesSabado": "Lunes a Sábado"
+    },
+    "validation": {
+      "required": "Este campo es obligatorio",
+      "email": "El formato del email no es válido",
+      "telefono": "El teléfono debe tener exactamente 9 caracteres",
+      "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto."
     }
   }
 }
